@@ -1,0 +1,14 @@
+
+table{
+    border: 5px solid blue;
+    border-spacing: 5px;
+}
+th,td{
+    border:1px solid blue;
+    text-align: center;
+    padding: 5px;
+    padding-left: 10px;
+    padding-right: 10px;
+
+    
+}

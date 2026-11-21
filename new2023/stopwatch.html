@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    
+</head>
+<style>
+    *{
+        padding: 0;
+        margin: 0;
+    }
+    body{
+        background-color: rgb(60, 232, 155);
+        font-family: monospace;
+    }
+    .luarbgt{
+        width: 100%;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+    }
+    .luar{
+        text-align: center;
+        margin-top: 20%;
+    }
+    .kontainer button{
+        padding: 10px;
+        border: none;
+        border-radius: 5px;
+    }
+    .kontainer button:hover{
+        background-color: rgb(186, 186, 186);
+        color: white;
+    }
+    .stopwatch{
+        font-size: 3rem;
+        color: white;
+    }
+    .laps{
+        font-size: 3rem;
+        color: white;  
+    }
+</style>
+<body>
+    <div class="luarbgt">
+        <div class="luar">
+            <div class="kontainer">
+                <button onclick="start()" id="start">Start</button>
+                <button onclick="stop()" id="pause">stop</button>
+                <button onclick="restart()" id="restart">restart</button>
+            </div>
+            <div class="stopwatch">
+                000:00
+            </div>
+            <ul class="laps"></ul>
+        </div>
+    </div>
+
+    <script src="stopwatch.js"></script>
+</body>
+</html>

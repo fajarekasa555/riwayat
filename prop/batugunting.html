@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="batutasting.css">
+    <link rel="stylesheet" href="load.css">
+    <link rel="stylesheet" href="musik.css">
+    <title>tasting</title>
+    <script type="text/javascript" src="jquery-1.11.1.min.js"></script>
+          <script type="text/javascript">
+            $(document).ready(function(){
+              $('a.close').click(function(eve){
+                
+                eve.preventDefault();
+                $(this).parents('div.popup').fadeOut('slow');
+              });
+            });
+          </script>
+    <link rel="stylesheet" href="feed.css">
+</head>
+<body>
+    <div id="preloader"></div>
+
+    <div class="popup">
+        <div id="box">
+            <a class="close" href="#">X</a>
+            <div class="text">
+              <h3 class="title">CARA BERMAIN</h3>
+              <p class="paragraf">"Pilih pilihan yang tersedia untuk melawan Candra"</p>
+            </div>
+        </div>		
+    </div>
+    <input type="radio" name="r" id="open" />
+          <input type="radio" name="r" id="close" />
+          <div class="f-button"><label for="open">Feedback</label></div>
+            <div id="form-area">
+              <div class="form-in">
+                <div class="close1"><label for="close">x</label></div>
+            <form action="database.php" method="post">
+              <input type="text" required placeholder="Input Your Name" class="in" name="nama"/><br />
+              <input type="email" required placeholder="Input Your Email" class="in" name="email"/><br />
+                <textarea placeholder="Your Comment" required class="text1" name="komentar"></textarea><br />
+              <input type="submit" value="Submit" class="sb" />
+            </form>
+              </div>
+            </div>
+        <div id=""app>
+            <div class="jawaban">
+                <h1 class="judul">JANKEN</h1>
+                <h1 id="dalamgame"></h1>
+                <h1 id="hasil"></h1>
+            </div>
+            <div class="game">
+                <div class="pilihan" onclick="dipilih('👊')">👊</div>
+                <div class="pilihan" onclick="dipilih('🖐')">🖐</div>
+                <div class="pilihan" onclick="dipilih('✌')">✌</div>
+
+            </div>
+            <div class="konten">
+                <a class="tombol" href="list.php">Keluar</a>
+            </div>
+            <div id="bgmbox">
+                <button id="unvious"> </button>
+                <button id="play"> </button>
+                <button id="mute"> </button>
+                <button id="prev"> </button>
+            </div>
+            <input type="radio" name="r" id="open" />
+            <script>
+                var bgm = new Audio();
+                bgm.src = "musik/bgm6.mp3";
+                bgm.loop = true;
+                bgm.play() ;
+        
+                function mulai() {
+                    var play = document.getElementById("play") ;
+                    var mute = document.getElementById("mute") ;
+                    var prev = document.getElementById("prev") ;
+                    var unvious = document.getElementById("unvious");
+        
+                    play.addEventListener('click', fplay);
+                    mute.addEventListener('click', fmute);   
+                    prev.addEventListener('click', fprev);     
+                    unvious.addEventListener('click', funvious)
+        
+                    function fplay(){
+                        if(bgm.paused){
+                            bgm.play();
+                            play.style.background="url(foto/2pause.png)";
+                        }else{
+                            bgm.pause() ;
+                            play.style.background="url(foto/2play.png)";
+                        }
+                    }
+                    function fmute(){
+                        if(bgm.muted){
+                            bgm.muted = false;
+                            mute.style.background="url(foto/2unmute.png)";
+                        }else{
+                            bgm.muted= true;
+                            mute.style.background="url(foto/2mute.png)";
+                        }
+                    }
+                    function fprev(){
+                        if(prev.click){
+                            bgm.src = "musik/bgm3.mp3";
+                            bgm.play();         
+                        }       
+                    }
+                    function funvious(){
+                        if(unvious.click){
+                            bgm.src = "musik/bgm2.mp3";
+                            bgm.play();
+                        }                
+                    }
+        
+                }
+                window.addEventListener('load', mulai) ;
+        
+            </script>
+    <script>
+        class Start{
+            constructor(){
+                this.namapemain = "kamu"
+                this.botname = "Candra"
+                this.pilihanpemain;
+                this.pilihanbot;
+                this.pemenang;
+            }
+
+            get getpilihanbot(){
+                return this.pilihanbot;
+            }
+
+            set setpilihanbot(pilihan){
+                this.pilihanbot = pilihan;
+            }
+
+            set Pilihanpemain(pilihan) {
+                this.Pilihanpemain = pilihan;
+            }
+            mainbot(){
+                const pilihan = ["👊","🖐","✌"];
+                const bot = pilihan[Math.floor(Math.random() * pilihan.length)];
+                return bot;
+                
+            }
+            kemenangan(){
+                if(this.pilihanbot == "🖐" && this.pilihanpemain == "✌") {
+                    return this.pemenang = this.namapemain
+                } else if (this.pilihanbot == "🖐" && this.pilihanpemain == "👊") {
+                    return this.pemenang = this.botname
+                } else if (this.pilihanbot == "✌" && this.pilihanpemain == "🖐") {
+                    return this.pemenang = this.botname
+                } else if (this.pilihanbot == "✌" && this.pilihanpemain == "👊") {
+                    return this.pemenang = this.namapemain
+                } else if (this.pilihanbot == "👊" && this.pilihanpemain == "🖐") {
+                    return this.pemenang = this.namapemain
+                } else if (this.pilihanbot == "👊" && this.pilihanpemain == "✌") {
+                    return this.pemenang = this.botname
+                } else {
+                    return this.pemenang = "SERI"
+                }
+            }
+            tanggapan(){
+                if(this.pemenang != "SERI"){
+                    return  (this.pemenang+" MENANG");
+                }else{
+                    return  ("HAHA "+this.pemenang+" TIDAK ADA YANG MENANG");
+                }
+            }
+        }
+        function dipilih(pilihanmu) {
+            const start = new Start();
+            start.pilihanpemain = pilihanmu
+            console.log("Kamu memilih : ",pilihanmu);
+            start.setpilihanbot = start.mainbot();
+            console.log("bot memilih : ",start.pilihanbot)
+            start.kemenangan();
+            console.log("Pemenang : ",start.pemenang);
+            console.log(start.tanggapan());
+
+            const dalamgame = document.getElementById("dalamgame");
+            dalamgame.textContent = ("KAMU "+pilihanmu+" VS "+start.pilihanbot+" CANDRA");
+            hasil.textContent = start.tanggapan();
+        }
+    </script>
+    <script src="load.js"></script>
+</body>
+</html>

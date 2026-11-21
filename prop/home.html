@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="utf-8">
+    <title>GAmE</title>
+    <link rel="stylesheet" href="feed.css">
+    <link rel="stylesheet" href="load.css">
+    <style>
+        html,body{
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            height: 100%;
+            background-color: #6789B9;
+            text-align: center;
+        }
+
+        .baris{
+            width: 100%;
+            height: 100%;
+            background: url(foto/bckv2.jpeg);
+            display: table;
+            background-size: cover;
+
+        }
+        .baris .inti{
+            display: table-cell;
+            vertical-align: middle;
+            width: 100%;
+            max-width: none;
+        }
+        .konten{
+            max-width: 500px;
+            margin: auto;
+            text-align: center;
+        }
+        .konten h1{
+            font-family: 'Ubuntu',sans-serif;
+            color: azure;
+            font-size: 500%;
+            text-shadow: 0 0 300p #000;
+
+        }
+        .konten .tombol{
+            border-radius: 9px;
+            color: #f9f3f4;
+            text-decoration: none;
+            font-family: 'Segoe UI',sans-serif;
+            border: 3px solid;
+            padding: 7px 13px;
+            font-weight: bold;
+            transition:  0.3s ease;
+        }
+        .konten .tombol:hover{
+            color: #2196f3;
+            cursor: pointer;
+            box-shadow:  0 0 5px #2196f3,
+                         0 0 20px #2196f3,
+                         0 0 60px #2196f3;
+                        
+        }
+        p{
+            font-size: 100%;
+            line-height: 200%;
+            text-align: justify;
+            margin: 3%;
+            font-family: 'segoe UI',sans-serif;
+            color: #f9f3f4;
+            text-align: center;
+            padding-left: 200px;
+            padding-right: 200px;
+        }
+        h3{
+            font-size: 120%;
+            line-height: 100%;
+            text-align: justify;
+            margin: 3%;
+            font-family: 'segoe UI',sans-serif;
+            color: #f9f3f4;
+            text-align: center;
+        }
+        h4{
+            font-size: 80%;
+            line-height: 200%;
+            text-align: justify;
+            margin: 3%;
+            font-family: 'segoe UI',sans-serif;
+            color: #f9f3f4;
+            text-align: center;
+            padding-left: 100px;
+            padding-right: 100px;
+        }
+        button{
+            border: none;
+            outline: none;
+            width: 48px;
+            height: 48px;
+            cursor: pointer;
+            background-color: #6789B9;
+        }
+        #play{
+            background-image: url("foto/2pause.png");
+        }
+        #mute{
+            background-image: url("foto/2unmute.png");
+        }
+        #prev{
+            background-image: url("foto/2prev.png");
+        }
+        #unvious{
+            background-image: url("foto/2unv.png");
+        }
+        @media (max-width: 1024px){
+
+        }
+        @media (max-width: 768){
+
+        }
+        @media (max-width: 600px){
+        }
+
+        
+
+    </style>
+</head>
+
+<body>
+    <div id="preloader"></div>
+    <input type="radio" name="r" id="open" />
+    <input type="radio" name="r" id="close" />
+    <div class="f-button"><label for="open">Feedback</label></div>
+        <div id="form-area">
+        <div class="form-in">
+            <div class="close1"><label for="close">x</label></div>
+        <form action="database.php" method="post">
+            <input type="text" required placeholder="Input Your Name" class="in" name="nama" /><br />
+            <input type="email" required placeholder="Input Your Email" class="in" name="email" /><br />
+            <textarea placeholder="Your Comment" required class="text1" name="komentar"></textarea><br />
+        <input type="submit" value="Submit" class="sb" />
+        </form>
+        </div>
+        </div>
+        <section class="baris">
+            <div class="inti">
+                <div class="konten">
+                    <h1>GAMES</h1>
+                    <a class="tombol" href="list.php">Start</a>
+                    <h4>klik "start" untuk melanjutkan</h4>
+                </div>
+            </div>
+        </section>
+        <h3>Deskripsi</H></h3>
+        <p>Holla!!,kami membuat website ini dengan tujuan untuk memenuhi tugas akhir di sekolah kita.Maka dari itu kami meminta maaf yang sebesar-besarnya bila ada kesalahan /sesuatu yang kurang pas yang telah kita lakukan
+            Jadi,jangan lupa tetap di jalan setan(kata mermaidman).(09-03-2022)
+        </p>
+        <br>
+        <p>kontak:
+            wkwkwkwkwkw@hmail.com
+        </p>
+        <br>
+        <div id="bgmbox">
+            <button id="unvious"> </button>
+            <button id="play"> </button>
+            <button id="mute"> </button>
+            <button id="prev"> </button>
+        </div>
+        <input type="radio" name="r" id="open" />
+        <script>
+            var bgm = new Audio();
+            bgm.src = "musik/bgmlof.mp3";
+            bgm.loop = true;
+            bgm.play() ;
+
+            function mulai() {
+                var play = document.getElementById("play") ;
+                var mute = document.getElementById("mute") ;
+                var prev = document.getElementById("prev") ;
+                var unvious = document.getElementById("unvious");
+
+                play.addEventListener('click', fplay);
+                mute.addEventListener('click', fmute);   
+                prev.addEventListener('click', fprev);     
+                unvious.addEventListener('click', funvious)
+
+                function fplay(){
+                    if(bgm.paused){
+                        bgm.play();
+                        play.style.background="url(foto/2pause.png)";
+                    }else{
+                        bgm.pause() ;
+                        play.style.background="url(foto/2play.png)";
+                    }
+                }
+                function fmute(){
+                    if(bgm.muted){
+                        bgm.muted = false;
+                        mute.style.background="url(foto/2unmute.png)";
+                    }else{
+                        bgm.muted= true;
+                        mute.style.background="url(foto/2mute.png)";
+                    }
+                }
+                function fprev(){
+                    if(prev.click){
+                        bgm.src = "musik/MixNuts.mp3";
+                        bgm.play();         
+                    }       
+                }
+                function funvious(){
+                    if(unvious.click){
+                        bgm.src = "musik/bgmlof.mp3";
+                        bgm.play();
+                    }                
+                }
+
+            }
+            window.addEventListener('load', mulai) ;
+
+        </script>
+    <script src="load.js"></script>
+
+</body>

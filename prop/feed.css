@@ -1,0 +1,151 @@
+.f-button {
+    height: 35px;
+    border-radius: 9px;
+    border: 3px solid;
+    border-color: #f9f3f4;
+    color: #f9f3f4;
+    width: 100px;
+    line-height: 32px;
+    font-weight: 600;
+    color: white;
+    transform: rotate(-90deg);
+    -webkit-transform: rotate(-90deg);
+    text-align: center; font-size: 17px; 
+    position: fixed;
+    right: -40px;
+    top: 45%;
+    font-family: 'Segoe UI', sans-serif;
+    z-index: 999;
+  }
+
+  .f-button:hover {
+    color: #2196f3;
+    border-color: #2196f3;
+    cursor: pointer;
+      box-shadow:  0 0 5px #2196f3,
+                   0 0 20px #2196f3,
+                   0 0 60px #2196f3; 
+  }
+
+  #form-area {
+    height: 100%;
+    width: 100%;
+    position: fixed;
+    top: -100%;
+    left: 0;
+    background: rgba(0, 0, 0, 0.90);
+    opacity: .9;
+  }
+  #open:checked ~ #form-area {
+    top: 0;
+  }
+
+  #open:checked ~ #form-area .form-in {
+      margin-top: 150px;
+      transition: all .5s .4s;
+  }
+  input[type="radio"] {
+      display: none;
+  }
+  label {
+      cursor: pointer;
+      padding: 8px 0;
+  }
+  .form-in {
+      height: auto;
+      width: 20%;
+      padding: 2% 4%;
+      border-radius: 5px;
+      background: #FFF;
+      margin-left: 36%;
+      margin-top: -400px;
+  }
+
+  .in, .text1 {
+      width: 90%;
+      margin: 5px;
+
+transition: all .4s .1s;
+
+padding: 9px 7px;
+
+outline: none;
+
+border-radius: 4px;
+
+border: solid 2px #999999;
+
+}
+
+.in:focus:invalid, .text:focus:invalid {
+
+border-color: #2196f3;
+
+}
+
+.in:focus:valid, .text:focus:valid {
+
+border-color: #2196f3;
+
+}
+
+.text1 {
+
+height: 70px;
+
+}
+
+.sb {
+
+margin: 5px;
+
+padding: 5px 10px;
+
+cursor: pointer;
+
+border-radius: 4px;
+
+border: none;
+
+background: #999;
+
+color: white;
+
+font-size: 16px;
+
+font-family: 'Segoe UI', sans-serif;
+
+}
+
+.sb:hover {
+
+background: #2196f3;
+
+}
+
+.close1 {
+
+height: 25px;
+
+width: 35px;
+
+top: -35px;
+
+color: rgb(0, 0, 0);
+
+position: relative;
+
+text-align: center;
+
+margin-left: 99%;
+
+font-weight: bold;
+
+font-size: 25px;
+
+background: #fff;
+
+border-radius: 4px 4px 0 0;
+font-family: 'Segoe UI',sans-serif;
+
+}

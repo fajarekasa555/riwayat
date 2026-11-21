@@ -1,0 +1,22 @@
+.inputbox{
+    width: 80%;
+    height: 70%;
+    padding-left: 20%;
+    padding-top: 10%;
+}
+.inputbox p{
+    text-align: center;
+    font-size: larger;
+}
+.btnregis{
+    text-align: center;
+}
+.btnregis a{
+    font-size: small;
+    cursor: pointer;
+    color: black;
+}
+.logo{
+    height: 64px;
+    width: 64px;
+}

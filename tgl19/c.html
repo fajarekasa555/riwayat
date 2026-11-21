@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *, html, body{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+
+        }
+        .kon{
+            display: flex;
+            text-align: center;
+            min-height: 100vh;
+            min-width: 500px;
+            justify-content: center;
+            align-items: center;
+        }
+        input{
+            color: black;
+            background-color: white;
+            padding: 16px;
+            font-size: 25px;
+            font-family: fantasy;
+            border-color: crimson;
+            border-radius: 10px;
+        }
+        button{
+            padding: 17px;
+            font-size: 25px;
+            background-color: crimson;
+            color: white;
+            border: none;
+            font-family: fantasy;
+            border-radius: 10px;
+        }
+        button:hover{
+            background-color: grey;
+            color: rgb(211, 211, 211);
+            cursor: pointer;
+        }
+        h1{
+            font-size: 25px;
+            color: crimson;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin-bottom: 10px;
+            max-width: 500px;
+        }
+        /* #loader{
+            display: flex;
+            width: 100%;
+            height: 100vh;
+            position: absolute;
+            justify-content: center;
+            align-items: center;
+
+        } */
+        #load{
+            display: none;
+            top: 50%;
+            left: 50%;
+            position: absolute;
+            width: 50px;
+            height: 50px;
+            z-index: 9;
+            border-top: 10px solid crimson;
+            border-radius: 100%;
+            animation: 1s spin infinite linear;
+        }
+        @keyframes spin{
+            0%{
+                transform: rotate(0deg);
+            }
+
+            100%{
+                transform: rotate(360deg);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="loader" id="loader">
+        <div id="load"></div>
+    </div>
+        <div class="kon" id="kon">
+            
+            <div class="kone">
+                <h1 id="tanya"></h1>
+                <input id="jawab" placeholder="Jawab Disini..." type="text">
+                <button onclick="botstart()">SEND</button>
+            </div>
+        </div>
+        <script>
+            const perta = document.getElementById('tanya')
+            const jawa = document.getElementById('jawab')
+            const load = document.getElementById('load')
+            const loader = document.getElementById('loader')
+            const kon = document.getElementById('kon')
+
+            let init =0
+
+            const botsayang = (data) => {
+                return[
+                    "Konnichiwa, hajimemashite watashi no namae wa fajarubot desu,anata no namaewa dare desuka?",
+                    `jadi kamu ${data?.nama},pantesan tolol,btw umur kamu berapa?`,
+                    `wih ${data?.usia},ternyata kita seumuran,hobi kamu apaan?`,
+                    `sama dong,saya juga suka ${data?.hobi},kamu turu ra`,
+                    `aku juga ${data?.turu}`,
+                ]
+
+            }
+
+            perta.innerHTML = botsayang()[0]
+
+            let name = []
+
+            function botstart(){
+                if(jawa.value.length < 1) return alert("isi dulu cuy form nya")
+                init++
+                if(init === 1){
+                    console.log({nama : jawa.value})
+                    botdelay({nama : jawa.value})
+                    name.push()
+
+                } else if(init === 2){
+                    botdelay({usia : jawa.value})
+
+                } else if(init === 3){
+                    botdelay({hobi : jawa.value})
+
+
+                } else if(init === 4){
+                    botdelay({turu : jawa.value})
+
+                } else if(init === 5){
+                    finish()
+
+                }else{
+                    end()
+                }
+
+
+            }
+            function botdelay(jawaban){
+                load.style.display = "block"
+                kon.style.filter = "blur(8px)"
+                setTimeout(() => {
+                    perta.innerHTML = botsayang(jawaban)[init]
+                    load.style.display = "none"
+                    kon.style.filter = "none"
+                },[1000])
+                name.push(jawa.value)
+                jawa.value = ""
+            }
+            function finish(){
+                perta.innerHTML = `arigatou gozaimasu ${name[0]}-san`
+                jawa.value = "ok"
+
+            }
+            function end(){
+                alert(`terimakasih ${name[0]},silahkan kesini lagu cuyyyyyyy`)
+                window.location.reload()
+
+            }
+        </script>
+</body>
+</html>

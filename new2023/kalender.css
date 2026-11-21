@@ -1,0 +1,42 @@
+#calendar {
+    width: 400px;
+    font-family: Arial, sans-serif;
+  }
+  
+  .month {
+    margin-bottom: 10px;
+  }
+  
+  .weekdays {
+    display: flex;
+  }
+  
+  .weekday {
+    flex: 1;
+    text-align: center;
+    font-weight: bold;
+  }
+  
+  .days {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  
+  .day {
+    flex: 1;
+    text-align: center;
+    padding: 5px;
+    border: 1px solid #ccc;
+  }
+  
+  .current-day {
+    background-color: lightblue;
+  }
+  
+  .events {
+    margin-top: 10px;
+  }
+  
+  .event {
+    margin-bottom: 5px;
+  }

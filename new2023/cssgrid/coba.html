@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        body{
+            background-color: black;
+            
+        }
+        .kontainer{
+            height: 100vh;
+            background-color: white;
+            display: grid;
+            gap: 5px;
+            padding: 5px;
+            grid-template-columns: auto 15% 15% 15%;
+            grid-template-areas: 'kontainer1 kontainer1 kontainer1 kontainer1 kontainer1 kontainer1 cilik cilik cilok cilok ciluk ciluk'
+            'pst pst pst pst pst pst pst pst pst side side side'
+            'meta meta main main main main main main main side side side'
+            'meta meta main main main main main main main ads ads ads'
+            'meta meta img img img img img img img ads ads ads'
+            'meta meta img img img img img img img bandeng bandeng bandeng'
+            'meta meta img img img img img img img bandeng bandeng bandeng'
+
+            'ftr ftr ftr ftr ftr ftr ftr ftr ftr ftr ftr ftr';
+        }
+        .kontainer1{
+            grid-area: kontainer1;
+            grid-template-columns: 50%;
+        }
+        .cilik{
+            grid-area: cilik;
+            display: grid;
+            border: 10px;
+            background-color: blueviolet;
+        }
+        .cilok{
+            grid-area: cilok;
+            display: grid;
+            border: 10px;
+            background-color: blueviolet;
+        }
+        .ciluk{
+            grid-area: ciluk;
+            display: grid;
+            border: 10px;
+            background-color: blueviolet;
+        }
+        .side{
+            grid-area: side;
+            display: grid;
+            background-color: cyan;
+        }
+        .pst{
+            grid-area: pst;
+            display: grid;
+            background-color: aquamarine;
+        }
+        .meta
+        {
+            grid-area: meta;
+            display: grid;
+            background-color: brown;
+        }
+        .main{
+            grid-area: main;
+        }
+        .ads{
+            grid-area: ads;
+            background-color: grey;
+        }
+        .img{
+            grid-area: img;
+            background-color: burlywood;
+        }
+        .bandeng{
+            grid-area: bandeng;
+            background-color: hotpink;
+        }
+        .footer{
+            grid-area: ftr;
+            background-color: greenyellow;
+        }
+    </style>
+</head>
+<body>
+        <div class="kontainer">
+            <div class="kontainer1"> title</div>
+            <div class="cilik">menu</div>
+            <div class="cilok">aku</div>
+            <div class="ciluk">dia</div>
+            <div class="pst">kamu</div>
+            <div class="side">bapaknya</div>
+            <div class="meta">bapakmu</div>
+            <div class="main">saya</div>
+            <div class="ads">ads</div>
+            <div class="img">gambar</div>
+            <div class="bandeng">bandeng</div>
+            <div class="footer">footer</div>
+        </div>
+
+    
+</body>
+</html>

@@ -1,0 +1,21 @@
+
+.timpa{
+    position: fixed;
+    height: 100vh;
+    z-index: 99;
+    opacity: 40%;
+}
+.karosel{
+    height: 100vh;
+    background-position: center;
+}
+.tulisan{
+    position: fixed;
+    font-family: 'ghibli';
+    height: 100vh;
+    align-items: center;
+    z-index: 999;
+}
+.dalem{
+    margin-top: 40vh;
+}

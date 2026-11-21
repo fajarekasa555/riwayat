@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #trailer{
+            min-width: 100%;
+            min-height: 100%;
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+        }
+        .intro{
+            width: 100%;
+            right: 0;
+            padding-top: 20px;
+            padding-bottom: 30px;
+            bottom: 0;
+            position: fixed;
+            background-color: rgba(0, 0, 0, 0.5);
+        }
+        p{
+            color: white;
+            font-family: fantasy;
+            font-size: 20px;
+        }
+        #btn{
+            border: none;
+            padding: 12px;
+            color: white;
+            background-color: black;
+            font-weight: 800;
+            margin-top: 20px;
+            width: 200px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <video autoplay muted id="trailer">
+        <source src="clip.mp4" type="video/mp4">
+    </video>
+    <div class="intro">
+        <center>
+            <img src="pngegg (2).png" width="150" height="150" alt="" srcset="">
+            <p>Studio Ghibli merupakan studio animasi terbaik yang sangat bagus</p>
+            <button id="btn" onclick="tgr()">PAUSE</button>
+        </center>
+    </div>
+    <script>
+        const trailer = document.getElementById("trailer");
+        const btn = document.getElementById("btn");
+
+        function tgr(){
+            if(trailer.paused){
+                trailer.play();
+                btn.innerHTML = "PAUSE";
+            }else{
+                trailer.pause();
+                btn.innerHTML = "PLAY";
+            }
+        }
+    </script>
+</body>
+</html>

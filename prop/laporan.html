@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .f-button {
+          height: 35px;
+          border: solid 3px rgb(255, 255, 255);
+          width: 100px;
+          line-height: 32px;
+          font-weight: 600;
+          color: white;
+          transform: rotate(-90deg);
+          -webkit-transform: rotate(-90deg);
+          text-align: center; font-size: 17px; 
+          position: fixed;
+          right: -40px;
+          top: 45%;
+          font-family: Arial, Helvetica, sans-serif;
+          z-index: 999;
+        }
+
+        .f-button:hover {
+          color: #008cff;
+          border-color: #008cff; 
+        }
+
+        #form-area {
+          height: 100%;
+          width: 100%;
+          position: fixed;
+          top: -100%;
+          left: 0;
+          background: rgba(0, 0, 0, 0.90);
+          opacity: .9;
+        }
+        #open:checked ~ #form-area {
+          top: 0;
+        }
+
+#open:checked ~ #form-area .form-in {
+
+margin-top: 150px;
+
+transition: all .5s .4s;
+
+}
+
+input[type="radio"] {
+
+display: none;
+
+}
+
+label {
+
+cursor: pointer;
+
+padding: 8px 0;
+
+}
+
+.form-in {
+
+height: auto;
+
+width: 20%;
+
+padding: 2% 4%;
+
+border-radius: 5px;
+
+background: #FFF;
+
+margin-left: 36%;
+
+margin-top: -400px;
+
+}
+
+.in, .text {
+
+width: 90%;
+
+margin: 5px;
+
+transition: all .4s .1s;
+
+padding: 9px 7px;
+
+outline: none;
+
+border-radius: 4px;
+
+border: solid 2px #999999;
+
+}
+
+.in:focus:invalid, .text:focus:invalid {
+
+border-color: rgb(0, 153, 255);
+
+}
+
+.in:focus:valid, .text:focus:valid {
+
+border-color: rgb(0, 89, 255);
+
+}
+
+.text {
+
+height: 70px;
+
+}
+
+.sb {
+
+margin: 5px;
+
+padding: 5px 10px;
+
+cursor: pointer;
+
+border-radius: 4px;
+
+border: none;
+
+background: #999;
+
+color: white;
+
+font-size: 16px;
+
+font-family: 'Segoe UI', sans-serif;
+
+}
+
+.sb:hover {
+
+background: rgb(0, 102, 255);
+
+}
+
+.close {
+
+height: 25px;
+
+width: 35px;
+
+top: -35px;
+
+color: rgb(0, 0, 0);
+
+position: relative;
+
+text-align: center;
+
+margin-left: 99%;
+
+font-weight: bold;
+
+font-size: 25px;
+
+background: #fff;
+
+border-radius: 4px 4px 0 0;
+font-family: 'Segoe UI',sans-serif;
+
+}
+    </style>
+</head>
+<body>
+  <input type="radio" name="r" id="open" />
+  <input type="radio" name="r" id="close" />
+  <div class="f-button"><label for="open">Feedback</label></div>
+    <div id="form-area">
+      <div class="form-in">
+        <div class="close"><label for="close">x</label></div>
+    <form action="LINK-TARGET-ADD-HERE" method="get">
+      <input type="text" required placeholder="Input Your Name" class="in" /><br />
+      <input type="email" required placeholder="Input Your Email" class="in" /><br />
+        <textarea placeholder="Your Comment" required class="text"></textarea><br />
+      <input type="submit" value="Submit" class="sb" />
+    </form>
+      </div>
+    </div>
+    <div class="popup">
+        <div id="box">
+            <a class="close" href="#">X</a>
+                <div class="luar">
+                    <form>
+                      <h1>Berikan Pendapatmu</h1>
+                      <div class="id">
+                        <input type="text" placeholder="Nama lengkap">
+                        <i class="namauser"></i>
+                      </div>
+                      <div class="id">
+                        <input type="email" placeholder="Email">
+                        <i class="emailuser"></i>
+                      </div>
+                      <textarea cols="15" rows="5" placeholder="masukkan pendapatmu"></textarea>
+                      <button>Kirim</button>
+                    </form>
+                </div>          
+        </div>		
+    </div>
+    
+    
+</body>
+</html>

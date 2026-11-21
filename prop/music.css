@@ -1,0 +1,12 @@
+body{
+  text-align: center;
+}
+img{
+  height: 10px;
+  width: 10px;
+}
+.musibox audio{
+  width: 90%;
+  outline: none;
+  opacity: 50%;
+}
